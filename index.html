@@ -1,0 +1,27 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .active-link {
+            background-color: red;
+        }
+    </style>
+    <script>
+        function setActiveLink(link) {
+            var links = document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].classList.remove('active-link');
+            }
+            link.classList.add('active-link');
+            document.getElementById('active-link-text').textContent = link.textContent;
+        }
+    </script>
+</head>
+<body>
+    <a href="#" onclick="setActiveLink(this)">Link text 1</a>
+    <a href="#" onclick="setActiveLink(this)">Link text 2</a>
+    <a href="#" onclick="setActiveLink(this)">Link text 3</a>
+    <a href="#" onclick="setActiveLink(this)">Link text 4</a>
+    <p id="active-link-text"></p>
+</body>
+</html>
